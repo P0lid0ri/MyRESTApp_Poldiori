@@ -27,4 +27,4 @@ Tutte le modifiche rilevanti apportate al progetto **MyRESTApp_Poldiori** sono d
 
 ---
 
-📌 **Nota**: il progetto è stato sviluppato interamente in Kotlin utilizzando Android SDK 35.  
+📌 **Nota**: il progetto è stato sviluppato interamente in Kotlin utilizzando Android SDK 35, non è stato svolto tutto su un giorno ma diversi pomeriggi e mattinate a scuola (mi sono dimeticato di fare i commit). 
