@@ -1,21 +1,61 @@
 package com.example.myrestapp_poldiori
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageButton
+import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import java.security.MessageDigest
 
 class LoginActivity : AppCompatActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        val email = findViewById<TextView>(R.id.input_email)
+        val password = findViewById<TextView>(R.id.input_password)
+        val menu = findViewById<ImageButton>(R.id.button_image)
+
+        menu.setOnClickListener {
+            val email_input = email.text.toString()
+            val password_input = password.text.toString()
+            val pass = md5(password_input)
+            input_check(email_input, pass)
         }
     }
-}
 
+    private fun input_check(email_input: String, pass: String) {
+        val email = credenziali["email"]
+        val password = credenziali["password"]
+
+        if (email == email_input && password == pass) {
+            start_activity(MenuActivity::class.java)
+            Toast.makeText(this, "Login Avvenuto!", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "Errore Credenziali!", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun start_activity(activityClass: Class<*>) {
+        val intent = Intent(this, activityClass)
+        startActivity(intent)
+    }
+
+    private val credenziali = mapOf(
+        "email" to "admin@gmail.com",
+        "password" to "e10adc3949ba59abbe56e057f20f883e" // password MD5 di "123456"
+    )
+
+    private fun md5(input: String): String {
+        val digest = MessageDigest.getInstance("MD5")
+        val hashBytes = digest.digest(input.toByteArray())
+        return hashBytes.joinToString("") { "%02x".format(it) }
+    }
+}

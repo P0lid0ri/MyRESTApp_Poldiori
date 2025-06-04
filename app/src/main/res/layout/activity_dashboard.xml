@@ -7,4 +7,52 @@
     android:layout_height="match_parent"
     tools:context=".DashboardActivity">
 
+    <ImageButton
+        android:id="@+id/btn_create"
+        android:layout_width="152dp"
+        android:layout_height="155dp"
+        android:layout_marginTop="92dp"
+        android:background="@drawable/matita"
+        android:contentDescription="fsfsfsfsf"
+        app:layout_constraintEnd_toStartOf="@+id/btn_udf"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_udf"
+        android:layout_width="170dp"
+        android:layout_height="161dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/sheelt"
+        android:contentDescription="fsfsfsfsfsfs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_reload"
+        android:layout_width="166dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="131dp"
+        android:layout_marginBottom="184dp"
+        android:background="@drawable/reload"
+        android:contentDescription="frsfsfsfsfs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_delete"
+        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_create" />
+
+    <ImageButton
+        android:id="@+id/btn_delete"
+        android:layout_width="177dp"
+        android:layout_height="175dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="180dp"
+        android:background="@drawable/delete"
+        android:contentDescription="frgrrgr"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_udf"
+        app:layout_constraintVertical_bias="0.748" />
 </androidx.constraintlayout.widget.ConstraintLayout>
