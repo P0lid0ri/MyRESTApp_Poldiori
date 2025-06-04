@@ -49,8 +49,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private val credenziali = mapOf(
-        "email" to "admin@gmail.com",
-        "password" to "e10adc3949ba59abbe56e057f20f883e" // password MD5 di "123456"
+        "email" to "amendolaciuchetti@gmail.com",
+        "password" to "7f4a82dab23d683b996d795860d61083" // password in  MD5 di "amendolaciuchetti"
     )
 
     private fun md5(input: String): String {
